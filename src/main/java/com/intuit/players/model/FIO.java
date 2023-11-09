@@ -1,10 +1,12 @@
 package com.intuit.players.model;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
-public class Address {
-    private final String country;
-    private final String  state;
-    private final String  city;
+@Builder
+public class FIO {
+    private final String name;
+    private final String  nameGiven;
+    private final String  nameLast;
 }
