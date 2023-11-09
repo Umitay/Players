@@ -111,7 +111,7 @@ Or run it using the docker-compose.yaml file located in the project's root direc
 
 Thank you for the code review and your time. 
 I am ready to answer any additional questions or provide further information if needed.
-Thanks again, and I hope for the opportunity to work with you in the future.
+
 
 
 
