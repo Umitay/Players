@@ -1,38 +1,32 @@
 package com.intuit.players.service;
 
 import com.intuit.players.model.Player;
-import com.intuit.players.repository.IMongoRepository;
+import com.intuit.players.repository.IReactiveMongoRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.Optional;
 
 @Service
+@Slf4j
+//@RequiredArgsConstructor
+@Transactional
 public class PlayerService {
-    private final IMongoRepository playerRepository;
+    private final IReactiveMongoRepository playerRepository;
 
     @Autowired
-    public PlayerService(IMongoRepository playerRepository) {
+    public PlayerService(IReactiveMongoRepository playerRepository) {
         this.playerRepository = playerRepository;
     }
 
     public Mono<Player> getPlayerById(String playerId) {
-
-        try {
-            return Mono.just(playerRepository.findById(playerId).get());
-        }catch (Exception e){
-            return Mono.empty();
-        }
-
+         return playerRepository.findById(playerId);
     }
 
     public Flux<Player> getAllPlayers() {
-        try {
-            return Flux.fromIterable(playerRepository.findAll());
-        }catch (Exception e){
-            return Flux.empty();
-        }
+        return playerRepository.findAll();
     }
 }

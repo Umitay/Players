@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.intuit</groupId>
     <artifactId>Players</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>Players</name>
     <description>Players</description>
     <properties>
@@ -29,6 +29,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -45,6 +49,11 @@
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+            </dependency>
     </dependencies>
 
     <build>

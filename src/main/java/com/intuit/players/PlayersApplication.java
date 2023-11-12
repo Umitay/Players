@@ -6,7 +6,11 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.reactive.config.EnableWebFlux;
 
+@EnableWebFlux
+//@CrossOrigin(origins = "http://localhost:8081")
 @SpringBootApplication
 @EnableMongoRepositories(basePackages = "com.intuit.players.repository")
 public class PlayersApplication {

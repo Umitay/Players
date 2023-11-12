@@ -6,12 +6,14 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.boot.test.autoconfigure.actuate.observability.AutoConfigureObservability;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 
 @SpringBootTest
+@AutoConfigureObservability
 class PlayersApplicationTests {
     @MockBean
     private PlayerController playerController;

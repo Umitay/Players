@@ -1,19 +1,22 @@
-services:
+version: '3.5'
 
+services:
   app:
     container_name: playersApp
     depends_on:
       - mongodb
-    build: ./players-api
+    build: .
     restart: on-failure
     env_file:
-      - environment-config/.env
+      - .env
     ports:
       - ${SPRING_LOCAL_PORT}:${SPRING_DOCKER_PORT}
     environment:
       SPRING_APPLICATION_JSON: '{
               "spring.data.mongodb.uri" : "mongodb://$MONGODB_USER:$MONGODB_PASSWORD@mongodb:$MONGODB_DOCKER_PORT/$MONGODB_DATABASE?authSource=admin"
             }'
+    networks:
+      - dev
     volumes:
       - .m2:/root/.m2
     stdin_open: true
@@ -22,12 +25,23 @@ services:
     container_name: playersMongo
     image: 'mongo:latest'
     env_file:
-      - environment-config/.env
+      - .env
     environment:
       - MONGO_INITDB_DATABASE=${MONGODB_DATABASE}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_PASSWORD}
       - MONGO_INITDB_ROOT_USERNAME=${MONGODB_USER}
     ports:
       - $MONGODB_LOCAL_PORT:${MONGODB_DOCKER_PORT}
+    networks:
+      - dev
     volumes:
-      - db:/data/db
+      - mongodb:/data/db
+
+networks:
+  dev:
+    name: dev
+    driver: bridge
+
+volumes:
+  mongodb:
+    driver: "local"
