@@ -1,5 +1,3 @@
-/*
-
 
 package com.intuit.players.controller;
 
@@ -30,11 +28,9 @@ class PlayerControllerTest {
     @Test
     void getPlayerById() {
 
-        webClient.get().uri("/{id}", 100)
+        webClient.get().uri("/api/players/{id}", "abbated01")
                 .exchange()
                 .expectStatus().isOk();
 
     }
 }
-
- */
