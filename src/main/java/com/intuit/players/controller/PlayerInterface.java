@@ -8,5 +8,5 @@ import reactor.core.publisher.Mono;
 
 public interface PlayerInterface {
     Flux<Player> getAllPlayers();
-    Mono<ResponseEntity<Player>> getPlayerById(@PathVariable(required = true) String playerId);
+    Mono<Player> getPlayerById(@PathVariable(required = true) String playerId);
 }
