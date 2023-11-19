@@ -1,13 +1,6 @@
-# Players
-
-Hi Dear Interviewer,
-
-I would like to present to you my implementation of the home task.
 
 
-Introduction:
-Players is a microservice that serves the contents of players.
-
+# Test REST APIs using Spring Boot 3.1.5, Reactive @WebFluxTest, WebTestClient, and Reactive @DataMongoTest.
 
 # Components Overview:
 
@@ -21,11 +14,6 @@ Players is a microservice that serves the contents of players.
 
 	Retrieve the list of all players.
 	Retrieve a single player by ID.
-
-
-# Non-Functional Requirements:
-
-	Read the Player.csv file and save in MongoDB;
 
 
 # Components Overview:
