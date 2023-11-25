@@ -14,14 +14,10 @@ import reactor.core.publisher.Mono;
 @RestController
 @Slf4j
 @RequestMapping("/api/players")
-public class PlayerController implements PlayerInterface{
+public class PlayerController{
 
-
-    private  final PlayerService playerService;
     @Autowired
-    public PlayerController(PlayerService playerService){
-        this.playerService = playerService;
-    }
+    public   PlayerService playerService;
 
     @GetMapping
     public Flux<Player> getAllPlayers() {

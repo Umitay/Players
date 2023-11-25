@@ -29,6 +29,9 @@ class PlayersApplicationTests {
         Assertions.assertNotNull(playerController);
         Assertions.assertNotNull(playerService);
     }
-
+    @Test
+    public void main() {
+        PlayersApplication.main(new String[] {});
+    }
 
 }

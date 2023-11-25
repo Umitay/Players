@@ -1,6 +1,7 @@
-package com.intuit.players.controller;
+package com.intuit.players.component;
 
 import com.intuit.players.config.TestConfig;
+import com.intuit.players.controller.PlayerController;
 import com.intuit.players.model.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
